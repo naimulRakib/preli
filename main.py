@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from mangum import Mangum
 from models import TicketRequest, TicketResponse, HealthResponse
 from classifier import classify_ticket
 
@@ -28,3 +29,5 @@ async def sort_ticket(request: TicketRequest):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+
+handler = Mangum(app)
