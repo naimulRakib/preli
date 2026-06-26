@@ -1,0 +1,13 @@
+.env
+.venv
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+.git
+.gitignore
+tests/
+*.md
+Procfile
+vercel.json
+.vercelignore
