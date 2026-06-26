@@ -9,6 +9,10 @@ app = FastAPI(title="Ticket Sorter", version="1.0.0")
 async def startup_event():
     print("Ticket Sorter service started")
 
+@app.get("/")
+async def root():
+    return {"message": "Ticket Sorter API is running. Go to /health or use POST /sort-ticket."}
+
 @app.get("/health", response_model=HealthResponse)
 async def health_check():
     return HealthResponse(status="ok", service="ticket-sorter")
